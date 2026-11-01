@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    // All imagery is served locally from /public/images. To use remote
+    // images later, add a `remotePatterns` entry for that host.
+    formats: ["image/avif", "image/webp"],
+    qualities: [75, 85],
+  },
   experimental: {
     agentFeedback: true,
   },
