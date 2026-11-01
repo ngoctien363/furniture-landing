@@ -1,212 +1,73 @@
 import type { ImageAsset, ImageCategory } from "@/types/content";
 
 /**
- * Central image registry.
+ * Central image registry — Siêu Thị Nội Thất design visualisations (3D renders)
+ * supplied by the business in /public/images/khoanh.
  *
- * All demonstration photography is generic stock imagery from Unsplash
- * (Unsplash License), stored locally under /public/images/placeholders so the site
- * never depends on remote hosts. These photos are NOT Minh Khoi projects.
+ *   Căn hộ 01: files 1–18   ·   Căn hộ 02: files 19–36 (19 = floor plan)
  *
- * To replace an image: drop the new file into /public/images, update `src`,
- * dimensions, `alt`, and set `source: { kind: "official" }`.
+ * Files 7 and 32 have white side borders; trimmed copies live in
+ * /public/images/khoanh/crop (originals untouched).
+ *
+ * To replace an image: drop the file into /public/images, then update `src`,
+ * dimensions and `alt` here. Components never reference image paths directly.
  */
 
-const MOCK_DIR = "/images/placeholders";
+const DIR = "/images/khoanh";
 
-/** All mock photos share a 3:2 crop (2000×1333) for visual consistency. */
-const W = 2000;
-const H = 1333;
-
-function stock(
+function official(
   file: string,
-  unsplashId: string,
   category: ImageCategory,
   alt: string,
+  width = 2560,
+  height = 1440,
 ): ImageAsset {
-  return {
-    src: `${MOCK_DIR}/${file}.jpg`,
-    alt,
-    width: W,
-    height: H,
-    category,
-    source: {
-      kind: "stock",
-      provider: "Unsplash",
-      url: `https://unsplash.com/photos/${unsplashId}`,
-    },
-  };
+  return { src: `${DIR}/${file}`, alt, width, height, category, source: { kind: "official" } };
 }
 
+/** Files 15–19 are 2560×1536. */
+const TALL = [2560, 1536] as const;
+
 export const images = {
-  /* Site-level ------------------------------------------------------------ */
-  heroLivingRoom: stock(
-    "hero-living-room",
-    "photo-1598928506311-c55ded91a20c",
-    "living-room",
-    "Phòng khách sáng với trần ô kẻ, kệ âm tường và sofa tông trung tính",
-  ),
-  aboutCalmBedroom: stock(
-    "about-calm-bedroom",
-    "photo-1617325247661-675ab4b64ae2",
-    "bedroom",
-    "Phòng ngủ tối giản với giường gỗ thấp và chăn ga trắng mềm mại",
-  ),
+  /* Căn hộ 01 ------------------------------------------------------------ */
+  apt1Living: official("1.jpg", "living-room", "Phối cảnh phòng khách với kệ tivi gỗ, đèn thả dạng vòng và bàn ăn bên cạnh"),
+  apt1LivingTv: official("2.jpg", "living-room", "Phối cảnh phòng khách nhìn từ sofa về phía kệ tivi và khu bàn ăn"),
+  apt1Sofa: official("3.jpg", "living-room", "Phối cảnh sofa tông kem, bàn trà tròn và tranh treo trên vách đá vân"),
+  apt1OpenPlan: official("4.jpg", "living-room", "Phối cảnh không gian khách và bàn ăn liên thông với vách đá vân và đèn vòng"),
+  apt1Dining: official("5.jpg", "dining", "Phối cảnh khu bàn ăn cạnh phòng khách dưới hệ đèn vòng"),
+  apt1DiningTop: official("6.jpg", "dining", "Phối cảnh bàn ăn mặt đá với ghế bọc da màu cam đất nhìn từ trên cao"),
+  apt1Kitchen: official("crop/7.jpg", "kitchen", "Phối cảnh bếp tủ gỗ phối trắng với kính ốp màu xanh ngọc", 1904, 1440),
+  apt1Master: official("8.jpg", "bedroom", "Phối cảnh phòng ngủ master với tủ áo gỗ, bàn trang điểm và gương elip"),
+  apt1Hallway: official("9.jpg", "hallway", "Phối cảnh hành lang với cửa gỗ và tranh trừu tượng"),
+  apt1Panorama: official("10.jpg", "living-room", "Phối cảnh toàn cảnh phòng khách và bàn ăn với vách đá vân"),
+  apt1MasterBed: official("11.jpg", "bedroom", "Phối cảnh phòng ngủ master với đầu giường bọc nệm và kệ trang trí có đèn"),
+  apt1MasterVanity: official("12.jpg", "bedroom", "Phối cảnh góc bàn trang điểm và giường trong phòng ngủ master"),
+  apt1MasterWall: official("13.jpg", "bedroom", "Phối cảnh phòng ngủ master với vách ốp nẹp đồng và rèm sáo"),
+  apt1MasterTop: official("14.jpg", "bedroom", "Phối cảnh bàn trang điểm và giường phòng ngủ master nhìn từ trên cao"),
+  apt1KidsRoom: official("15.jpg", "bedroom", "Phối cảnh phòng ngủ bé gái tông hồng với bàn học và tủ áo", ...TALL),
+  apt1KidsBed: official("16.jpg", "bedroom", "Phối cảnh phòng ngủ tông hồng với giường bọc nệm và góc học tập", ...TALL),
+  apt1KidsDesk: official("17.jpg", "bedroom", "Phối cảnh góc học tập có đèn trong phòng ngủ tông hồng", ...TALL),
+  apt1KidsTop: official("18.jpg", "bedroom", "Phối cảnh phòng ngủ tông hồng nhìn từ trên với bàn học và tranh treo", ...TALL),
 
-  /* Apartment ------------------------------------------------------------- */
-  apartmentLiving: stock(
-    "apartment-living",
-    "photo-1600607687939-ce8a6c25118c",
-    "apartment",
-    "Không gian sinh hoạt mở của căn hộ với sofa xám và mảng tường gỗ",
-  ),
-  apartmentLounge: stock(
-    "apartment-lounge",
-    "photo-1600566753086-00f18fb6b3ea",
-    "apartment",
-    "Phòng khách thông tầng với cầu thang gỗ bay và vách kính kịch trần",
-  ),
-  apartmentBedroom: stock(
-    "apartment-bedroom",
-    "photo-1631049307264-da0ec9d70304",
-    "bedroom",
-    "Phòng ngủ căn hộ với đầu giường bọc nệm và cửa sổ nhìn ra thành phố",
-  ),
-  apartmentKitchen: stock(
-    "apartment-kitchen",
-    "photo-1600489000022-c2086d79f9d4",
-    "dining",
-    "Bếp với tủ màu than chì, gạch trắng và kệ gỗ mở",
-  ),
-
-  /* Villa ----------------------------------------------------------------- */
-  villaPoolTerrace: stock(
-    "villa-pool-terrace",
-    "photo-1613977257363-707ba9348227",
-    "villa",
-    "Biệt thự đương đại màu trắng với sân hồ bơi và khu thư giãn ngoài trời",
-  ),
-  villaFacade: stock(
-    "villa-facade",
-    "photo-1613490493576-7fde63acd811",
-    "villa",
-    "Mặt tiền biệt thự đương đại với trần gỗ nhìn ra hồ bơi dài",
-  ),
-  villaGlassStair: stock(
-    "villa-glass-stair",
-    "photo-1600573472550-8090b5e0745e",
-    "villa",
-    "Nội thất biệt thự với cầu thang hở và vách kính hướng ra hồ bơi",
-  ),
-  villaEvening: stock(
-    "villa-evening",
-    "photo-1600585154340-be6161a56a0c",
-    "villa",
-    "Biệt thự hiện đại rực sáng lúc hoàng hôn với không gian sinh hoạt mở",
-  ),
-  villaGarden: stock(
-    "villa-garden",
-    "photo-1600607688969-a5bfcd646154",
-    "villa",
-    "Mặt sau biệt thự ốp tối màu dưới tán cây lớn trong vườn",
-  ),
-
-  /* Townhouse ------------------------------------------------------------- */
-  townhouseLiving: stock(
-    "townhouse-living",
-    "photo-1618221195710-dd6b41faaea6",
-    "living-room",
-    "Phòng khách ấm áp với sofa thấp, đôn da và cửa sổ lấy sáng cao",
-  ),
-  townhouseLounge: stock(
-    "townhouse-lounge",
-    "photo-1600210492486-724fe5c67fb0",
-    "living-room",
-    "Phòng khách ngập nắng với sofa da màu cognac và mảng tường tranh",
-  ),
-  townhouseConsole: stock(
-    "townhouse-console",
-    "photo-1618220179428-22790b461013",
-    "furniture-detail",
-    "Bàn console đồng thau với gương tròn, gốm và ghế bành màu cam đất",
-  ),
-  townhouseFamilyRoom: stock(
-    "townhouse-family-room",
-    "photo-1616137466211-f939a420be84",
-    "living-room",
-    "Phòng sinh hoạt gia đình với sofa góc xám nhạt và cửa sổ cao",
-  ),
-
-  /* Suite / bedrooms ------------------------------------------------------ */
-  suiteBedroom: stock(
-    "suite-bedroom",
-    "photo-1616594039964-ae9021a400a0",
-    "bedroom",
-    "Phòng ngủ với giường bọc nệm chần sọc, tường tối màu và đèn thả đồng",
-  ),
-  suiteBedroomDark: stock(
-    "suite-bedroom-dark",
-    "photo-1617104678098-de229db51175",
-    "bedroom",
-    "Phòng ngủ trầm với tường tối có vân và cửa sổ hướng ra vườn",
-  ),
-  suiteBedroomArt: stock(
-    "suite-bedroom-art",
-    "photo-1617098900591-3f90928e8c54",
-    "bedroom",
-    "Phòng ngủ với đèn chùm pha lê, ghế băng bọc nệm và tranh trừu tượng",
-  ),
-  suiteSitting: stock(
-    "suite-sitting",
-    "photo-1616486338812-3dadae4b4ace",
-    "living-room",
-    "Phòng ngồi với sofa góc màu kem, bàn trà tròn và mảng tường trang trí",
-  ),
-
-  /* Family home ----------------------------------------------------------- */
-  familyDining: stock(
-    "family-dining",
-    "photo-1617806118233-18e1de247200",
-    "dining",
-    "Phòng ăn với ghế nhung xanh lá và đèn chùm cầu điêu khắc",
-  ),
-  familyEntry: stock(
-    "family-entry",
-    "photo-1616046229478-9901c5536a45",
-    "furniture-detail",
-    "Sảnh vào với tủ gỗ óc chó, gương tròn và tường xanh xô thơm",
-  ),
-  familyReading: stock(
-    "family-reading",
-    "photo-1618219908412-a29a1bb7b86e",
-    "furniture-detail",
-    "Góc đọc sách với đèn mây, tủ đan mây và ghế da",
-  ),
-  familyBedroom: stock(
-    "family-bedroom",
-    "photo-1615874959474-d609969a20ed",
-    "bedroom",
-    "Phòng ngủ nhiều lớp với đèn đan, tranh thực vật và chăn mềm",
-  ),
-
-  /* Furniture details ----------------------------------------------------- */
-  detailLoungeChair: stock(
-    "detail-lounge-chair",
-    "photo-1586023492125-27b2c045efd7",
-    "furniture-detail",
-    "Ghế thư giãn màu mù tạt cạnh đèn cây đồng thau và tranh đơn sắc",
-  ),
-  detailVelvetSofa: stock(
-    "detail-velvet-sofa",
-    "photo-1555041469-a586c61ea9bc",
-    "furniture-detail",
-    "Sofa nhung xanh rêu trên chân gỗ thuôn",
-  ),
-  detailCabinetry: stock(
-    "detail-cabinetry",
-    "photo-1594026112284-02bb6f3352fe",
-    "furniture-detail",
-    "Hệ tủ treo gỗ và trắng với đồ trang trí",
-  ),
+  /* Căn hộ 02 ------------------------------------------------------------ */
+  apt2FloorPlan: official("19.jpg", "floor-plan", "Mặt bằng phối cảnh căn hộ hai phòng ngủ", ...TALL),
+  apt2Living: official("20.jpg", "living-room", "Phối cảnh phòng khách với sofa nệm phồng và vách lam gỗ"),
+  apt2Dining: official("21.jpg", "dining", "Phối cảnh bàn ăn mặt đá với bình hoa, nhìn về phía phòng khách"),
+  apt2LivingTv: official("22.jpg", "living-room", "Phối cảnh kệ tivi ốp gỗ và sofa nhìn từ khu bàn ăn"),
+  apt2TvWall: official("23.jpg", "living-room", "Phối cảnh mảng tường tivi với kệ gỗ có đèn hắt"),
+  apt2Panorama: official("24.jpg", "living-room", "Phối cảnh toàn cảnh phòng khách, bàn ăn và bếp liên thông"),
+  apt2DiningKitchen: official("25.jpg", "dining", "Phối cảnh khu bàn ăn và bếp với vách lam gỗ"),
+  apt2Entry: official("26.jpg", "furniture-detail", "Phối cảnh tủ giày và tủ âm tường khu sảnh vào"),
+  apt2Kitchen: official("27.jpg", "kitchen", "Phối cảnh hệ tủ bếp gỗ phối trắng với tủ lạnh và máy giặt âm tủ"),
+  apt2Bedroom: official("28.jpg", "bedroom", "Phối cảnh phòng ngủ với đầu giường gỗ uốn cong và bàn trang điểm"),
+  apt2BedroomWardrobe: official("29.jpg", "bedroom", "Phối cảnh phòng ngủ với tủ áo trắng, kệ treo và cây xanh"),
+  apt2BedroomDesk: official("30.jpg", "bedroom", "Phối cảnh góc bàn làm việc cạnh cửa sổ trong phòng ngủ nhìn từ trên"),
+  apt2BedroomWide: official("31.jpg", "bedroom", "Phối cảnh phòng ngủ với đầu giường gỗ và rèm sáo"),
+  apt2NavyRoom: official("crop/32.jpg", "bedroom", "Phối cảnh phòng ngủ tông xanh navy với bàn làm việc", 1866, 1440),
+  apt2NavyArt: official("33.jpg", "bedroom", "Phối cảnh phòng ngủ tông xanh navy với tranh trừu tượng và kệ sách"),
+  apt2NavyTop: official("34.jpg", "bedroom", "Phối cảnh giường và bàn làm việc trong phòng ngủ tông xanh nhìn từ trên"),
+  apt2NavyWardrobe: official("35.jpg", "bedroom", "Phối cảnh phòng ngủ tông xanh với tủ áo và kệ có đèn hắt"),
+  apt2NavyDoor: official("36.jpg", "bedroom", "Phối cảnh phòng ngủ tông xanh nhìn từ cửa vào"),
 } satisfies Record<string, ImageAsset>;
 
 export type ImageKey = keyof typeof images;

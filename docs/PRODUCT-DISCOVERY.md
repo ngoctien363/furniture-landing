@@ -1,4 +1,4 @@
-# MINH KHOI – PRODUCT DISCOVERY
+# SIÊU THỊ NỘI THẤT – PRODUCT DISCOVERY
 
 **Version:** 2.0 (§12 updated 2026-11-01: phases moved to the canonical plan)  
 **Status:** Approved Product Direction  
@@ -8,7 +8,7 @@
 
 ## 1. Product Overview
 
-Minh Khoi is a residential interior design and construction studio website. The platform consists of:
+Siêu Thị Nội Thất is a residential interior design and construction studio website. The platform consists of:
 
 1. **Public Website:** Introduces the brand, showcases services and projects, and generates customer inquiries.
 2. **CMS Admin:** Allows the business owner to manage website content, images, projects, services, and contact information without modifying source code.
@@ -19,7 +19,7 @@ The website should communicate a professional, sophisticated, and premium visual
 
 | Attribute | Requirement |
 |---|---|
-| Brand name | Minh Khoi |
+| Brand name | Siêu Thị Nội Thất |
 | Business model | Interior Design & Construction Studio |
 | Target market | Residential |
 | Positioning | Mixed budget segments, premium presentation |
@@ -72,10 +72,10 @@ These are provisional design tokens and must be reviewed against the official lo
 
 ### 4.4 Brand Assets
 
-- Use a temporary text wordmark: `MINH KHOI`.
+- Use a temporary text wordmark: `SIÊU THỊ NỘI THẤT`.
 - Preserve the existing logo when supplied.
 - Use generic placeholder images until real brand photography is available.
-- Do not represent placeholder images as completed Minh Khoi projects.
+- Do not represent placeholder images as completed Siêu Thị Nội Thất projects.
 
 ## 5. Public Website Scope
 
@@ -95,7 +95,7 @@ These are provisional design tokens and must be reviewed against the official lo
 3. Services
 4. Featured Projects
 5. Design Philosophy
-6. Why Choose Minh Khoi
+6. Why Choose Siêu Thị Nội Thất
 7. Consultation CTA
 8. Contact / Footer
 
@@ -354,7 +354,7 @@ Use mock data for:
 Rules:
 - Centralize mock content.
 - Clearly identify illustrative content.
-- Never present sample projects as actual Minh Khoi projects.
+- Never present sample projects as actual Siêu Thị Nội Thất projects.
 - Never invent real business contact details.
 - Make it possible to replace mock data through CMS without changing frontend components.
 - Do not create fake working contact links.

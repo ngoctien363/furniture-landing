@@ -132,7 +132,7 @@ export function HeaderShell({ navigation, cta, ctaLight, mobileCta, mobileContac
           <Logo tone={light || open ? "light" : "dark"} />
 
           <nav aria-label={uiText.mainNavigation} className="hidden lg:block">
-            <ul className="flex items-center gap-10">
+            <ul className="flex items-center gap-6 xl:gap-10">
               {items.map((item) => {
                 const active = isActive(pathname, item.href);
                 return (
@@ -141,7 +141,7 @@ export function HeaderShell({ navigation, cta, ctaLight, mobileCta, mobileContac
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "eyebrow link-underline py-1 transition-opacity",
+                        "eyebrow link-underline whitespace-nowrap py-1 transition-opacity",
                         active ? "opacity-100" : "opacity-75 hover:opacity-100",
                       )}
                     >
@@ -154,7 +154,7 @@ export function HeaderShell({ navigation, cta, ctaLight, mobileCta, mobileContac
           </nav>
 
           <div className="flex items-center gap-4">
-            <div className="hidden lg:block">{light ? ctaLight : cta}</div>
+            <div className="hidden xl:block">{light ? ctaLight : cta}</div>
             <button
               ref={toggleRef}
               type="button"

@@ -68,7 +68,7 @@ export default function DesignSystemPage() {
       <PageIntro
         eyebrow="Phase 1 · Nội bộ"
         title="Design system"
-        lede="Token, typography và các component dùng chung cho website MINH KHOI. Trang này chỉ dùng để review, không hiển thị trong điều hướng."
+        lede="Token, typography và các component dùng chung cho website Siêu Thị Nội Thất. Trang này chỉ dùng để review, không hiển thị trong điều hướng."
       />
 
       <Container className="pb-section">
@@ -185,17 +185,16 @@ export default function DesignSystemPage() {
             {ratios.map((r, i) => (
               <figure key={r} className={r === "21/9" ? "col-span-2 md:col-span-4" : ""}>
                 <ImageFrame
-                  image={[images.apartmentLiving, images.familyDining, images.detailLoungeChair, images.villaPoolTerrace][i]}
+                  image={[images.apt1Master, images.apt2Dining, images.apt2Entry, images.apt1Panorama][i]}
                   ratio={r}
                   sizes="(min-width: 768px) 25vw, 50vw"
-                  showMockLabel={r === "4/5"}
                 />
                 <figcaption className="mt-2 text-xs text-walnut">ratio {r}</figcaption>
               </figure>
             ))}
           </div>
           <a href="#hover-demo" id="hover-demo" className="group mt-8 block max-w-md">
-            <ImageFrame image={images.suiteSitting} ratio="3/2" sizes="28rem" zoom />
+            <ImageFrame image={images.apt1Sofa} ratio="3/2" sizes="28rem" zoom />
             <span className="mt-2 block text-xs text-walnut">Hover: slow zoom</span>
           </a>
         </Block>

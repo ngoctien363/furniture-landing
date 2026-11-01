@@ -12,7 +12,7 @@ export const consultationCta: CtaBlockData = {
   heading: "Hãy bắt đầu từ cách bạn muốn sống",
   description:
     "Chia sẻ về ngôi nhà và mong muốn của bạn. Chúng tôi sẽ cùng bạn định hình hướng đi phù hợp cho không gian.",
-  image: images.townhouseLounge,
+  image: images.apt2Living,
   primaryCta: siteConfig.ctas.startProject,
   secondaryCta: siteConfig.ctas.bookShowroom,
   showHotline: true,
@@ -38,7 +38,7 @@ export const designPhilosophy: DesignPhilosophyBlockData = {
       body: "Không gian được tổ chức quanh ánh sáng tự nhiên, tầm nhìn và nhịp sinh hoạt hằng ngày.",
     },
   ],
-  image: images.apartmentLounge,
+  image: images.apt2TvWall,
 };
 
 /** Generic working process (placeholder until the official process is confirmed). */

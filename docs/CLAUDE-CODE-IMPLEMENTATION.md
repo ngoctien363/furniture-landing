@@ -1,4 +1,4 @@
-# MINH KHOI – CLAUDE CODE IMPLEMENTATION GUIDE
+# SIÊU THỊ NỘI THẤT – CLAUDE CODE IMPLEMENTATION GUIDE
 
 **Version:** 2.1  
 **Purpose:** Development instructions for Claude Code  
@@ -30,7 +30,7 @@ Use this prompt after the three documentation files and `CLAUDE.md` are in the r
 You are acting as a Senior Full-Stack Engineer, Software Architect,
 and UI/UX Engineer.
 
-Your task is to build the Minh Khoi website with an integrated CMS.
+Your task is to build the Siêu Thị Nội Thất website with an integrated CMS.
 
 IMPORTANT:
 Do not immediately start coding.
@@ -251,7 +251,7 @@ Use:
 Rules:
 
 - Clearly identify mock data.
-- Never present sample projects as actual Minh Khoi projects.
+- Never present sample projects as actual Siêu Thị Nội Thất projects.
 - Never invent a real hotline, Zalo URL, Facebook URL,
   email, or showroom address.
 - Do not create fake working links.

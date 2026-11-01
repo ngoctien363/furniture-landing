@@ -33,7 +33,11 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
   const { previous, next } = getAdjacentProjects(slug);
   const facts = [
     { label: t.category, value: getCategoryLabel(project.category) },
-    { label: t.area, value: formatArea(project.areaSqm) },
+    {
+      label: t.area,
+      value: project.area.value !== null ? formatArea(project.area.value) : project.area.placeholder,
+      pending: project.area.value === null,
+    },
     { label: t.style, value: project.designStyle },
     { label: t.location, value: project.location.value ?? project.location.placeholder, pending: !project.location.value },
     { label: t.year, value: project.year.value?.toString() ?? project.year.placeholder, pending: !project.year.value },
@@ -42,7 +46,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
   return (
     <>
       {/* Hero */}
-      <section aria-labelledby="project-title" className="relative isolate flex min-h-[560px] items-end overflow-hidden bg-charcoal text-ivory h-[88svh]">
+      <section aria-labelledby="project-title" className="relative isolate flex min-h-[max(560px,88svh)] items-end overflow-hidden bg-charcoal text-ivory">
         <ImageFrame
           image={project.mainImage}
           ratio="fill"
@@ -55,7 +59,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
           aria-hidden
           className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgb(37_36_33/0.85)_0%,rgb(37_36_33/0.3)_50%,rgb(37_36_33/0)_75%),linear-gradient(to_bottom,rgb(37_36_33/0.5)_0%,rgb(37_36_33/0)_24%)]"
         />
-        <Container className="pb-14 md:pb-20">
+        <Container className="pb-14 pt-28 md:pb-20 lg:pt-36">
           {project.isMock ? <MockBadge label={uiText.demoProject} className="mb-8" /> : null}
           <Eyebrow tone="light" className="mb-6">
             {getCategoryLabel(project.category)}
@@ -95,8 +99,10 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
               {project.story.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-              {project.isMock ? (
-                <p className="border-l-2 border-taupe bg-paper px-5 py-4 text-sm text-walnut">{t.mockNotice}</p>
+              {project.isMock || project.detailsPending ? (
+                <p className="border-l-2 border-taupe bg-paper px-5 py-4 text-sm text-walnut">
+                  {project.isMock ? t.mockNotice : t.pendingNotice}
+                </p>
               ) : null}
             </Reveal>
           </div>
@@ -117,10 +123,13 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
       <nav aria-label={projectsPage.intro.eyebrow} className="border-t border-line bg-ivory">
         <Container>
           <div className="grid divide-y divide-line md:grid-cols-2 md:divide-x md:divide-y-0">
-            {[
-              { project: previous, label: t.previous, Icon: ArrowLeft, align: "start" as const },
-              { project: next, label: t.next, Icon: ArrowRight, align: "end" as const },
-            ].map(({ project: p, label, Icon, align }) => (
+            {(previous.id === next.id
+              ? [{ project: next, label: t.next, Icon: ArrowRight, align: "start" as const }]
+              : [
+                  { project: previous, label: t.previous, Icon: ArrowLeft, align: "start" as const },
+                  { project: next, label: t.next, Icon: ArrowRight, align: "end" as const },
+                ]
+            ).map(({ project: p, label, Icon, align }) => (
               <Link
                 key={label}
                 href={`/projects/${p.slug}`}

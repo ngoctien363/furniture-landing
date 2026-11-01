@@ -24,11 +24,14 @@ export function ProjectsExplorer({ projects, categories, allLabel, emptyLabel, f
 
   const options: { value: ProjectCategory | "all"; label: string; count: number }[] = [
     { value: "all", label: allLabel, count: projects.length },
-    ...categories.map((c) => ({
-      value: c.value,
-      label: c.label,
-      count: projects.filter((p) => p.category === c.value).length,
-    })),
+    ...categories
+      .map((c) => ({
+        value: c.value,
+        label: c.label,
+        count: projects.filter((p) => p.category === c.value).length,
+      }))
+      // Only offer categories that actually contain projects.
+      .filter((c) => c.count > 0),
   ];
 
   return (

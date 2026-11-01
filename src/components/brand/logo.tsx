@@ -42,7 +42,7 @@ export function Logo({ tone = "dark", className, logo = siteConfig.logo }: LogoP
         />
       ) : (
         <span className="flex flex-col leading-none">
-          <span className="font-display text-xl font-medium tracking-[0.28em] md:text-2xl">
+          <span className="whitespace-nowrap font-display text-lg font-medium tracking-[0.18em] sm:text-xl md:text-2xl md:tracking-[0.2em]">
             {logo.primary}
           </span>
           {logo.secondary ? (

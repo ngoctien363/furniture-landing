@@ -1,8 +1,8 @@
-# MINH KHOI – PROJECT INSTRUCTIONS
+# SIÊU THỊ NỘI THẤT – PROJECT INSTRUCTIONS
 
 ## 1. Project Overview
 
-Minh Khoi is a residential interior design and construction website
+Siêu Thị Nội Thất is a residential interior design and construction website
 with an integrated owner-only CMS.
 
 The application includes:
@@ -124,7 +124,7 @@ Use mock content until real business assets are supplied.
 
 Rules:
 - Clearly identify mock content.
-- Never present illustrative projects as actual Minh Khoi projects.
+- Never present illustrative projects as actual Siêu Thị Nội Thất projects.
 - Never invent real contact details.
 - Keep mock content centralized and replaceable.
 - Do not create fake working contact links.

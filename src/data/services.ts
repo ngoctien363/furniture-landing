@@ -23,7 +23,7 @@ export const services: Service[] = [
       "Lời khuyên sớm về vật liệu và ngân sách",
       "Lộ trình thực hiện cụ thể",
     ],
-    image: images.familyReading,
+    image: images.apt2Dining,
     isPlaceholder: true,
   },
   {
@@ -40,7 +40,7 @@ export const services: Service[] = [
       "Giữ trọn tinh thần thiết kế khi thi công",
       "Kiểm soát tiến độ và chất lượng đồng bộ",
     ],
-    image: images.suiteSitting,
+    image: images.apt1Living,
     isPlaceholder: true,
   },
   {
@@ -57,7 +57,7 @@ export const services: Service[] = [
       "Hoàn thiện đồng nhất trong toàn bộ ngôi nhà",
       "Phối hợp chặt chẽ với thiết kế tổng thể",
     ],
-    image: images.detailCabinetry,
+    image: images.apt2Entry,
     isPlaceholder: true,
   },
   {
@@ -74,7 +74,7 @@ export const services: Service[] = [
       "Thi công chính xác, chú trọng chi tiết",
       "Báo giá và tiến độ rõ ràng",
     ],
-    image: images.villaGlassStair,
+    image: images.apt2Kitchen,
     isPlaceholder: true,
   },
 ];

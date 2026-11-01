@@ -1,4 +1,4 @@
-# MINH KHOI – SYSTEM ARCHITECTURE
+# SIÊU THỊ NỘI THẤT – SYSTEM ARCHITECTURE
 
 **Version:** 2.0  
 **Architecture style:** Modular Monolith  
@@ -28,7 +28,7 @@ flowchart TB
     Owner[Website Owner]
     Visitor[Public Visitor]
 
-    subgraph Application["Minh Khoi Application - Next.js"]
+    subgraph Application["Siêu Thị Nội Thất Application - Next.js"]
         Admin["Payload CMS Admin<br/>/admin"]
         Preview["Draft Preview"]
         Public["Public Website"]

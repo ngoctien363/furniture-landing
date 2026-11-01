@@ -1,5 +1,5 @@
 /**
- * Typed content model for the MINH KHOI website.
+ * Typed content model for the Siêu Thị Nội Thất website.
  *
  * Every piece of business content lives in `src/data/*` and conforms to these
  * types. UI components only consume these shapes — they never hardcode
@@ -17,6 +17,9 @@ export type ImageCategory =
   | "villa"
   | "bedroom"
   | "dining"
+  | "kitchen"
+  | "hallway"
+  | "floor-plan"
   | "furniture-detail";
 
 export interface ImageAsset {
@@ -29,7 +32,7 @@ export interface ImageAsset {
   category: ImageCategory;
   /**
    * Where the image came from. `stock` images are generic demonstration
-   * photography and must never be presented as real Minh Khoi work.
+   * photography and must never be presented as real Siêu Thị Nội Thất work.
    */
   source:
     | { kind: "stock"; provider: string; url: string }
@@ -171,8 +174,8 @@ export interface Project {
   slug: string;
   name: string;
   category: ProjectCategory;
-  /** Floor area in square metres. */
-  areaSqm: number;
+  /** Floor area in square metres (pending until supplied). */
+  area: PendingValue<number>;
   designStyle: string;
   location: PendingValue;
   year: PendingValue<number>;
@@ -183,7 +186,12 @@ export interface Project {
   story: string[];
   featured: boolean;
   /**
-   * Illustrative demonstration project — not a real Minh Khoi commission.
+   * Real project whose name/area/location/year are not confirmed yet.
+   * The UI shows a "details will be updated" note.
+   */
+  detailsPending: boolean;
+  /**
+   * Illustrative demonstration project — not a real Siêu Thị Nội Thất commission.
    * The UI must label every mock project as demonstration content.
    */
   isMock: boolean;
@@ -368,6 +376,7 @@ export interface ProjectDetailLabels {
   next: string;
   backToProjects: string;
   mockNotice: string;
+  pendingNotice: string;
 }
 
 export interface ContactPageContent {

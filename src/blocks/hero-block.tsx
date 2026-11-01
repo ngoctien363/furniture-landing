@@ -7,7 +7,7 @@ export function HeroBlock({ eyebrow, heading, subheading, image, primaryCta, sec
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative isolate flex min-h-[640px] items-end overflow-hidden bg-charcoal text-ivory h-svh"
+      className="relative isolate flex min-h-[max(640px,100svh)] items-end overflow-hidden bg-charcoal text-ivory"
     >
       <ImageFrame
         image={image}
@@ -22,7 +22,7 @@ export function HeroBlock({ eyebrow, heading, subheading, image, primaryCta, sec
         className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgb(37_36_33/0.85)_0%,rgb(37_36_33/0.4)_42%,rgb(37_36_33/0)_70%),linear-gradient(to_bottom,rgb(37_36_33/0.5)_0%,rgb(37_36_33/0)_24%),linear-gradient(to_right,rgb(37_36_33/0.45)_0%,rgb(37_36_33/0)_60%)]"
       />
 
-      <Container className="pb-16 md:pb-24">
+      <Container className="pb-16 pt-28 md:pb-24 lg:pt-36">
         <div className="grid items-end gap-12 lg:grid-cols-12">
           <div className="lg:col-span-9">
             <Eyebrow tone="light" className="mb-8">

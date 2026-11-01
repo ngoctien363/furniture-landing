@@ -18,11 +18,11 @@ changing UI components.
 | About / Services / Projects / Contact copy | `src/data/pages/inner-pages.ts`, shared blocks in `src/data/pages/shared.ts` | Edit text; placeholder copy is flagged with `isPlaceholder` |
 | Consultation form labels/options | `src/data/consultation-form.ts` | Form is demo-only until a real backend is connected |
 | Interface strings | `src/data/ui-text.ts` | Vietnamese UI labels |
-| Hero / any image | `src/data/images.ts` | Add file under `public/images/`, update `src`, `alt`, size, set `source: { kind: "official" }` |
+| Hero / any image | `src/data/images.ts` | Add file under `public/images/`, update `src`, `alt` and size |
 | Services | `src/data/services.ts` | Edit copy; set `isPlaceholder: false` |
-| Projects | `src/data/projects.ts` | Replace entries; set `isMock: false` for real projects |
+| Projects | `src/data/projects.ts` | Set real name, `area`, `location`, `year`; then `detailsPending: false` |
 | Go live | `site-config.ts` → `isDemoContent: false`, set `NEXT_PUBLIC_SERVER_URL` | Removes demo notice and enables search indexing |
 
-Demo photography: generic Unsplash stock (Unsplash License), stored in
-`public/images/placeholders/`. Each image's source URL is recorded in `images.ts`.
-It must never be presented as real MINH KHOI work.
+Imagery: Siêu Thị Nội Thất design visualisations in `public/images/khoanh/` (Căn hộ 01 = files 1–18,
+Căn hộ 02 = files 19–36). Files 7 and 32 have trimmed copies in `khoanh/crop/`.
+Project names are working titles; area, location and year are pending.

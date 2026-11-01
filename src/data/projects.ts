@@ -2,15 +2,17 @@ import type { Project, ProjectCategory, SelectOption } from "@/types/content";
 import { images } from "./images";
 
 /**
- * ⚠️ ILLUSTRATIVE PROJECTS — future Payload `Projects` collection.
- * Every project is demonstration content (`isMock: true`). Names, areas,
- * styles and descriptions are invented for layout purposes and the
- * photography is generic stock imagery. None of these are real MINH KHOI
- * commissions. Replace with real projects (and `isMock: false`) once supplied.
+ * Projects — future Payload `Projects` collection.
+ *
+ * Imagery is Siêu Thị Nội Thất's own design visualisation (supplied by the business).
+ * Project names below are WORKING TITLES; area, location and year have not
+ * been provided yet, so they stay pending (`detailsPending: true`) and must
+ * not be invented. Descriptions only describe what the renders show.
  */
 
-const pendingLocation = { value: null, placeholder: "Chưa công bố" };
-const pendingYear = { value: null, placeholder: "—" };
+const pendingLocation = { value: null, placeholder: "Sẽ cập nhật" };
+const pendingYear = { value: null, placeholder: "Sẽ cập nhật" };
+const pendingArea = { value: null, placeholder: "Sẽ cập nhật" };
 
 export const projectCategories: SelectOption<ProjectCategory>[] = [
   { value: "apartment", label: "Căn hộ" },
@@ -25,104 +27,72 @@ export function getCategoryLabel(category: ProjectCategory): string {
 
 export const projects: Project[] = [
   {
-    id: "demo-01",
-    slug: "ivory-residence",
-    name: "Ivory Residence",
+    id: "apt-01",
+    slug: "can-ho-01",
+    name: "Căn hộ 01",
     category: "apartment",
-    areaSqm: 120,
-    designStyle: "Tối giản đương đại",
-    location: pendingLocation,
-    year: pendingYear,
-    mainImage: images.apartmentLiving,
-    gallery: [images.apartmentLounge, images.apartmentBedroom, images.apartmentKitchen],
-    shortDescription:
-      "Ý tưởng căn hộ đô thị với sắc xám dịu, gỗ ấm và ánh sáng tự nhiên trải dài khắp không gian.",
-    story: [
-      "Dự án minh hoạ này hình dung một căn hộ gia đình được mở thành một không gian sinh hoạt liền mạch, với mảng tường gỗ làm điểm tựa cho phòng khách.",
-      "Bảng màu tiết chế gồm xám, ngà và gỗ sồi để ánh sáng và chất liệu dẫn dắt cảm xúc, trong khi hệ tủ âm giữ mọi bề mặt luôn gọn gàng.",
-    ],
-    featured: true,
-    isMock: true,
-  },
-  {
-    id: "demo-02",
-    slug: "serene-villa",
-    name: "Serene Villa",
-    category: "villa",
-    areaSqm: 420,
-    designStyle: "Sang trọng đương đại",
-    location: pendingLocation,
-    year: pendingYear,
-    mainImage: images.villaPoolTerrace,
-    gallery: [images.villaFacade, images.villaGlassStair, images.villaEvening, images.villaGarden],
-    shortDescription:
-      "Ý tưởng biệt thự nơi nội thất và sân hiên hoà làm một quanh mặt hồ tĩnh lặng.",
-    story: [
-      "Dự án minh hoạ này khám phá một biệt thự được tổ chức xoay quanh hồ bơi, với vách kính kịch trần xoá nhoà ranh giới trong và ngoài.",
-      "Đá sáng màu, tường trắng và chi tiết kim loại mảnh tạo nên phông nền điềm tĩnh cho ánh chiều và đời sống ngoài trời.",
-    ],
-    featured: true,
-    isMock: true,
-  },
-  {
-    id: "demo-03",
-    slug: "walnut-townhouse",
-    name: "Walnut Townhouse",
-    category: "townhouse",
-    areaSqm: 210,
+    area: pendingArea,
     designStyle: "Hiện đại ấm áp",
     location: pendingLocation,
     year: pendingYear,
-    mainImage: images.townhouseLiving,
-    gallery: [images.townhouseLounge, images.townhouseConsole, images.townhouseFamilyRoom],
+    mainImage: images.apt1Panorama,
+    gallery: [
+      images.apt1Living,
+      images.apt1Sofa,
+      images.apt1DiningTop,
+      images.apt1OpenPlan,
+      images.apt1Kitchen,
+      images.apt1Hallway,
+      images.apt1MasterBed,
+      images.apt1Master,
+      images.apt1MasterTop,
+      images.apt1KidsRoom,
+      images.apt1KidsDesk,
+      images.apt1KidsTop,
+    ],
     shortDescription:
-      "Ý tưởng nhà phố kết hợp da bò màu cognac, gỗ óc chó và đồng thau trong một không khí thư thái.",
+      "Không gian sinh hoạt liên thông với vách đá vân, hệ đèn vòng và nội thất tông kem điểm sắc cam đất.",
     story: [
-      "Dự án minh hoạ này tái hiện một ngôi nhà phố hẹp với ghế ngồi thấp, rộng rãi và chất liệu ấm áp mời gọi sự nán lại.",
-      "Da, gỗ óc chó và đồng thau xước được lặp lại qua các tầng, tạo nên một tính cách nhẹ nhàng và kết nối cho cả ngôi nhà.",
+      "Phòng khách và khu bàn ăn được mở thành một không gian liền mạch. Mảng vách đá vân và kệ tivi ốp gỗ làm điểm nhấn, trong khi hệ đèn thả dạng vòng kết nối hai khu vực.",
+      "Phòng ngủ master dùng tủ áo gỗ, đầu giường bọc nệm và bàn trang điểm với gương elip có đèn. Phòng ngủ cho bé được thiết kế tông hồng nhẹ nhàng cùng góc học tập riêng.",
     ],
     featured: true,
-    isMock: true,
+    detailsPending: true,
+    isMock: false,
   },
   {
-    id: "demo-04",
-    slug: "nocturne-suite",
-    name: "Nocturne Suite",
-    category: "renovation",
-    areaSqm: 85,
-    designStyle: "Cổ điển hiện đại",
+    id: "apt-02",
+    slug: "can-ho-02",
+    name: "Căn hộ 02",
+    category: "apartment",
+    area: pendingArea,
+    designStyle: "Hiện đại tối giản",
     location: pendingLocation,
     year: pendingYear,
-    mainImage: images.suiteBedroom,
-    gallery: [images.suiteBedroomDark, images.suiteBedroomArt, images.suiteSitting],
-    shortDescription:
-      "Ý tưởng cải tạo phòng ngủ master cân bằng giữa gam màu trầm và chất liệu bọc nệm mềm mại.",
-    story: [
-      "Dự án minh hoạ này hình dung việc cải tạo phòng ngủ master, thay sắc trắng sáng bằng những mảng tường trầm bao bọc.",
-      "Giường bọc nệm chần sọc, ánh sáng nhiều lớp và góc ngồi yên tĩnh biến căn phòng thành một nơi nghỉ ngơi riêng tư.",
+    mainImage: images.apt2Panorama,
+    gallery: [
+      images.apt2FloorPlan,
+      images.apt2Living,
+      images.apt2Dining,
+      images.apt2TvWall,
+      images.apt2Entry,
+      images.apt2Kitchen,
+      images.apt2Bedroom,
+      images.apt2BedroomWardrobe,
+      images.apt2BedroomDesk,
+      images.apt2NavyArt,
+      images.apt2NavyRoom,
+      images.apt2NavyTop,
     ],
-    featured: false,
-    isMock: true,
-  },
-  {
-    id: "demo-05",
-    slug: "sage-family-home",
-    name: "Sage Family Home",
-    category: "townhouse",
-    areaSqm: 180,
-    designStyle: "Đương đại tự nhiên",
-    location: pendingLocation,
-    year: pendingYear,
-    mainImage: images.familyDining,
-    gallery: [images.familyEntry, images.familyReading, images.familyBedroom],
     shortDescription:
-      "Ý tưởng nhà gia đình với sắc xanh xô thơm, sợi tự nhiên và một phòng ăn ấm cúng.",
+      "Căn hộ hai phòng ngủ với sofa nệm phồng, vách lam gỗ và hệ tủ âm tường gọn gàng từ sảnh vào đến bếp.",
     story: [
-      "Dự án minh hoạ này đặt đời sống gia đình vào trung tâm là phòng ăn rộng, với ghế nhung và đèn chùm điêu khắc.",
-      "Tường xanh xô thơm, mây, tre và gỗ óc chó mang lại sự mềm mại tự nhiên trải dài từ sảnh vào, góc đọc sách đến phòng ngủ.",
+      "Mặt bằng căn hộ hai phòng ngủ tổ chức phòng khách, bàn ăn và bếp thành một trục liên thông. Vách lam gỗ phân tách nhẹ nhàng mà vẫn giữ được ánh sáng.",
+      "Hệ tủ giày, tủ âm tường và tủ bếp gỗ phối trắng được bố trí liền mạch. Hai phòng ngủ mang hai tinh thần riêng: một phòng tông gỗ ấm với đầu giường uốn cong, một phòng tông xanh navy với góc làm việc.",
     ],
     featured: true,
-    isMock: true,
+    detailsPending: true,
+    isMock: false,
   },
 ];
 

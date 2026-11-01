@@ -41,8 +41,12 @@ export function ProjectCard({
             </Title>
           </div>
           <dl className="shrink-0 pt-1 text-right text-sm text-walnut">
-            <dt className="sr-only">Diện tích</dt>
-            <dd className="tabular-nums">{formatArea(project.areaSqm)}</dd>
+            {project.area.value !== null ? (
+              <>
+                <dt className="sr-only">Diện tích</dt>
+                <dd className="tabular-nums">{formatArea(project.area.value)}</dd>
+              </>
+            ) : null}
             <dt className="sr-only">Phong cách</dt>
             <dd className="mt-1 text-xs text-taupe-deep">{project.designStyle}</dd>
           </dl>

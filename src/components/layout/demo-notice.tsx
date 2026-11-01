@@ -52,7 +52,7 @@ export function DemoNotice({ short, full }: DemoNoticeProps) {
   return (
     <aside
       aria-label={short}
-      className="fixed bottom-4 left-4 z-30 max-w-[calc(100vw-2rem)] text-ivory sm:bottom-6 sm:left-6 sm:max-w-sm"
+      className="fixed bottom-4 left-4 z-30 max-w-[calc(100vw-2rem)] text-ivory sm:bottom-6 sm:left-6 sm:max-w-md"
     >
       <div
         id={detailsId}
@@ -67,11 +67,11 @@ export function DemoNotice({ short, full }: DemoNoticeProps) {
           aria-expanded={expanded}
           aria-controls={detailsId}
           onClick={() => setExpanded((v) => !v)}
-          className="eyebrow flex items-center gap-3 whitespace-nowrap px-4 py-3 text-[0.625rem] tracking-[0.24em]"
+          className="eyebrow flex min-w-0 items-center gap-3 whitespace-nowrap px-4 py-3 text-[0.625rem] tracking-[0.2em]"
         >
-          <span aria-hidden className="size-1.5 rounded-full bg-taupe" />
-          {short}
-          <span className={cn("text-stone", expanded && "text-ivory")}>· {uiText.demoDetails}</span>
+          <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-taupe" />
+          <span className="truncate">{short}</span>
+          <span className={cn("hidden text-stone sm:inline", expanded && "text-ivory")}>· {uiText.demoDetails}</span>
         </button>
         <button
           type="button"

@@ -13,14 +13,14 @@ import { consultationCta, designPhilosophy, workProcess } from "./shared";
 export const aboutPage: AboutPageContent = {
   seo: {
     title: "Giới thiệu",
-    description: "MINH KHOI — đơn vị thiết kế và thi công nội thất nhà ở theo tinh thần sang trọng tĩnh lặng.",
+    description: "Siêu Thị Nội Thất — đơn vị thiết kế và thi công nội thất nhà ở theo tinh thần sang trọng tĩnh lặng.",
   },
   intro: {
     eyebrow: "Giới thiệu",
     title: "Thiết kế và tay nghề, cùng một tiêu chuẩn",
     lede: "Chúng tôi tin rằng một ngôi nhà đẹp bắt đầu từ sự thấu hiểu cách bạn sống mỗi ngày.",
   },
-  banner: images.villaGlassStair,
+  banner: images.apt1OpenPlan,
   story: {
     id: "about-story",
     blockType: "brandIntroduction",
@@ -28,15 +28,15 @@ export const aboutPage: AboutPageContent = {
     eyebrow: "Câu chuyện",
     heading: "Kiến tạo không gian điềm tĩnh và bền vững",
     body: [
-      "MINH KHOI thiết kế và thi công nội thất cho căn hộ, nhà phố và biệt thự, với mong muốn mỗi không gian vừa đẹp vừa dễ sống.",
+      "Siêu Thị Nội Thất thiết kế và thi công nội thất cho căn hộ, nhà phố và biệt thự, với mong muốn mỗi không gian vừa đẹp vừa dễ sống.",
       "Nội dung này là văn bản tạm. Câu chuyện thành lập, lịch sử phát triển và giới thiệu đội ngũ chính thức sẽ được cập nhật khi có thông tin từ doanh nghiệp.",
     ],
-    image: images.townhouseConsole,
-    secondaryImage: images.detailVelvetSofa,
+    image: images.apt2BedroomWardrobe,
+    secondaryImage: images.apt1KidsDesk,
     isPlaceholder: true,
   },
   process: workProcess,
-  philosophy: { ...designPhilosophy, id: "about-philosophy", image: images.suiteBedroomArt },
+  philosophy: { ...designPhilosophy, id: "about-philosophy", image: images.apt2NavyArt },
   cta: consultationCta,
 };
 
@@ -65,7 +65,7 @@ export const projectsPage: ProjectsPageContent = {
   intro: {
     eyebrow: "Dự án",
     title: "Không gian được kể bằng hình ảnh",
-    lede: "Các dự án hiện tại là ý tưởng minh hoạ với ảnh từ thư viện ảnh — dự án thực tế sẽ được cập nhật sau.",
+    lede: "Phối cảnh thiết kế từ các dự án của Siêu Thị Nội Thất. Thông tin chi tiết từng dự án sẽ được cập nhật.",
   },
   allLabel: "Tất cả",
   emptyLabel: "Chưa có dự án trong danh mục này.",
@@ -84,13 +84,14 @@ export const projectDetailLabels: ProjectDetailLabels = {
   next: "Dự án tiếp theo",
   backToProjects: "Tất cả dự án",
   mockNotice:
-    "Đây là dự án minh hoạ. Hình ảnh lấy từ thư viện ảnh và thông tin chỉ mang tính trình bày, không phải công trình thực tế của MINH KHOI.",
+    "Đây là dự án minh hoạ. Hình ảnh và thông tin chỉ mang tính trình bày, không phải công trình thực tế của Siêu Thị Nội Thất.",
+  pendingNotice: "Tên dự án hiện là tên tạm. Diện tích, địa điểm và năm thực hiện sẽ được cập nhật.",
 };
 
 export const contactPage: ContactPageContent = {
   seo: {
     title: "Liên hệ",
-    description: "Liên hệ MINH KHOI để bắt đầu dự án nội thất cho ngôi nhà của bạn.",
+    description: "Liên hệ Siêu Thị Nội Thất để bắt đầu dự án nội thất cho ngôi nhà của bạn.",
   },
   intro: {
     eyebrow: "Liên hệ",
@@ -106,7 +107,7 @@ export const contactPage: ContactPageContent = {
     eyebrow: "Showroom",
     heading: "Đặt lịch tham quan showroom",
     lede: "Trải nghiệm trực tiếp vật liệu và hoàn thiện. Địa chỉ và giờ mở cửa sẽ được cập nhật.",
-    image: images.detailCabinetry,
+    image: images.apt2DiningKitchen,
   },
   form: {
     eyebrow: "Yêu cầu tư vấn",

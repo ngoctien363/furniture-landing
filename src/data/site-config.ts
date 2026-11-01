@@ -11,14 +11,14 @@ import { images } from "./images";
  * and renders no link or action for it.
  */
 export const siteConfig: SiteConfig = {
-  name: "MINH KHOI",
+  name: "Siêu Thị Nội Thất",
   legalName: {
     value: null,
     placeholder: "Tên pháp lý sẽ được cập nhật",
   },
   tagline: "Thiết kế & Thi công Nội thất Nhà ở",
   description:
-    "MINH KHOI thiết kế và thi công nội thất nhà ở — căn hộ, nhà phố và biệt thự — theo tinh thần sang trọng tĩnh lặng, tinh tế và bền vững theo thời gian.",
+    "Siêu Thị Nội Thất thiết kế và thi công nội thất nhà ở — căn hộ, nhà phố và biệt thự — theo tinh thần sang trọng tĩnh lặng, tinh tế và bền vững theo thời gian.",
   // Explicit URL first; on Vercel fall back to the project's production domain.
   url:
     process.env.NEXT_PUBLIC_SERVER_URL ??
@@ -31,14 +31,13 @@ export const siteConfig: SiteConfig = {
   /** Temporary text wordmark. Replace with the official logo file later. */
   logo: {
     kind: "wordmark",
-    primary: "MINH KHOI",
-    secondary: "Nội thất",
+    primary: "SIÊU THỊ NỘI THẤT",
   },
 
   isDemoContent: true,
   demoNotice: {
-    short: "Bản demo · Nội dung minh hoạ",
-    full: "Đây là website demo. Hình ảnh là ảnh minh hoạ từ thư viện ảnh (Unsplash) và các dự án hiển thị chỉ mang tính minh hoạ — không phải công trình thực tế của MINH KHOI. Thông tin liên hệ chính thức sẽ được cập nhật sau.",
+    short: "Bản demo · Đang cập nhật nội dung",
+    full: "Website đang trong giai đoạn hoàn thiện. Giới thiệu doanh nghiệp, mô tả dịch vụ, thông tin chi tiết dự án và các kênh liên hệ chính thức sẽ được cập nhật sau.",
   },
 
   navigation: [
@@ -96,7 +95,7 @@ export const siteConfig: SiteConfig = {
 
   footer: {
     statement: "Không gian sống tĩnh lặng, tinh tế và bền vững theo thời gian.",
-    imageCredit: "Ảnh minh hoạ: Unsplash",
+    imageCredit: "Hình ảnh: phối cảnh thiết kế của Siêu Thị Nội Thất",
   },
 
   seo: {
@@ -109,8 +108,8 @@ export const siteConfig: SiteConfig = {
       "nội thất biệt thự",
       "nội thất nhà phố",
       "sản xuất đồ nội thất",
-      "MINH KHOI",
+      "Siêu Thị Nội Thất",
     ],
-    ogImage: images.heroLivingRoom,
+    ogImage: images.apt1Panorama,
   },
 };

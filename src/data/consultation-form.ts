@@ -40,7 +40,7 @@ export const consultationForm = {
   demoNotice: "Chế độ demo — thông tin sẽ không được gửi hoặc lưu lại.",
   success: {
     title: "Biểu mẫu hợp lệ — chưa có yêu cầu nào được gửi",
-    body: "Đây là bản demo nên thông tin của bạn không được gửi hay lưu trữ ở bất kỳ đâu. Khi hệ thống tiếp nhận chính thức được kết nối, yêu cầu sẽ được chuyển đến đội ngũ MINH KHOI.",
+    body: "Đây là bản demo nên thông tin của bạn không được gửi hay lưu trữ ở bất kỳ đâu. Khi hệ thống tiếp nhận chính thức được kết nối, yêu cầu sẽ được chuyển đến đội ngũ Siêu Thị Nội Thất.",
     reset: "Nhập lại biểu mẫu",
   },
   errorSummary: "Vui lòng kiểm tra lại các trường được đánh dấu.",
