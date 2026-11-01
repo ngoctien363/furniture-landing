@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ConsultationForm } from "@/components/contact/consultation-form";
 import { PageIntro } from "@/components/layout/page-intro";
-import { ButtonLink, ContactAction, Container, Eyebrow, Heading, ImageFrame, Reveal, Section } from "@/components/ui";
+import { ButtonLink, ContactAction, Container, Eyebrow, Heading, ImageFrame, Reveal, Section, ShowroomAddress } from "@/components/ui";
 import { contactPage } from "@/data/pages/inner-pages";
 import { siteConfig } from "@/data/site-config";
 import { uiText } from "@/data/ui-text";
@@ -18,7 +18,7 @@ function Pending({ value, placeholder }: { value: string | null; placeholder: st
 
 export default function ContactPage() {
   const { intro, channels, showroom, form } = contactPage;
-  const { showroomAddress, openingHours, email } = siteConfig.contact;
+  const { openingHours, email } = siteConfig.contact;
 
   return (
     <>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                     <div>
                       <dt className="eyebrow text-taupe-deep">{uiText.footer.showroom}</dt>
                       <dd>
-                        <Pending {...showroomAddress} />
+                        <ShowroomAddress className="mt-2" pendingClassName="italic text-walnut/80" />
                       </dd>
                     </div>
                     <div>

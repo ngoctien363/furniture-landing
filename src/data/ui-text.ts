@@ -12,6 +12,7 @@ export const uiText = {
   mainNavigation: "Điều hướng chính",
   footerNavigation: "Điều hướng chân trang",
   comingSoon: "Sắp cập nhật",
+  openInMaps: "Xem trên Google Maps",
   contactUnavailable: "Thông tin liên hệ chính thức sẽ được cập nhật.",
   demoBadge: "Minh hoạ",
   demoProject: "Dự án minh hoạ",

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cacheLife } from "next/cache";
 import { Logo } from "@/components/brand/logo";
-import { ButtonLink, ContactAction, Container } from "@/components/ui";
+import { ButtonLink, ContactAction, Container, ShowroomAddress } from "@/components/ui";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/site-config";
 import { uiText } from "@/data/ui-text";
@@ -79,10 +79,8 @@ export function SiteFooter() {
 
           <div className="lg:col-span-2">
             <ColumnTitle>{uiText.footer.showroom}</ColumnTitle>
-            <address className="space-y-2 text-sm not-italic text-ivory/80">
-              <p className={contact.showroomAddress.value ? "" : "italic opacity-70"}>
-                {pending(contact.showroomAddress.value, contact.showroomAddress.placeholder)}
-              </p>
+            <address className="space-y-4 text-sm not-italic text-ivory/80">
+              <ShowroomAddress />
               <p className={contact.openingHours.value ? "" : "italic opacity-70"}>
                 {pending(contact.openingHours.value, contact.openingHours.placeholder)}
               </p>

@@ -36,6 +36,13 @@ export function getContactDisplay(channel: ContactChannel): string {
   return channel.display ?? value;
 }
 
+/** Google Maps search link for a real address; null while it is pending. */
+export function getMapsHref(address: string | null): string | null {
+  const value = address?.trim();
+  if (!value) return null;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(value)}`;
+}
+
 /** Whether a channel opens in a new tab (external web destinations). */
 export function isExternalChannel(id: ContactChannelId): boolean {
   return id !== "hotline";

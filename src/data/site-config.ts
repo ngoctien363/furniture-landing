@@ -5,9 +5,9 @@ import { images } from "./images";
  * Site-wide settings (future Payload `SiteSettings` + `Navigation` globals).
  *
  * ⚠️ DEMONSTRATION CONTENT
- * Hotline, Zalo, Facebook and Messenger are real values supplied by the business.
- * Address, opening hours, email and company facts have NOT been
- * provided and must never be invented. While a value is `null`, the UI shows
+ * Hotline, Zalo, Facebook, Messenger and the showroom address are real
+ * values supplied by the business. Opening hours, email and company facts
+ * have NOT been provided and must never be invented. While a value is `null`, the UI shows
  * its labelled placeholder and renders no link or action for it.
  */
 export const siteConfig: SiteConfig = {
@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
   isDemoContent: true,
   demoNotice: {
     short: "Bản demo · Đang cập nhật nội dung",
-    full: "Website đang trong giai đoạn hoàn thiện. Giới thiệu doanh nghiệp, mô tả dịch vụ, thông tin chi tiết dự án và địa chỉ showroom sẽ được cập nhật sau.",
+    full: "Website đang trong giai đoạn hoàn thiện. Giới thiệu doanh nghiệp, mô tả dịch vụ, thông tin chi tiết dự án và giờ mở cửa showroom sẽ được cập nhật sau.",
   },
 
   navigation: [
@@ -85,7 +85,7 @@ export const siteConfig: SiteConfig = {
       },
     },
     showroomAddress: {
-      value: null,
+      value: "85F Hoàng Văn Thụ, Phường Quy Nhơn, Tỉnh Gia Lai",
       placeholder: "Địa chỉ showroom sẽ được công bố",
     },
     openingHours: {

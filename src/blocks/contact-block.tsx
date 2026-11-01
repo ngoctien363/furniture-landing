@@ -1,4 +1,4 @@
-import { ButtonLink, ContactAction, Container, Eyebrow, Heading, Reveal, Section } from "@/components/ui";
+import { ButtonLink, ContactAction, Container, Eyebrow, Heading, Reveal, Section, ShowroomAddress } from "@/components/ui";
 import { siteConfig } from "@/data/site-config";
 import { uiText } from "@/data/ui-text";
 import type { ContactBlockData } from "@/types/content";
@@ -11,7 +11,7 @@ function PendingLine({ value, placeholder }: { value: string | null; placeholder
 /** Contact channels and showroom details; values come from SiteSettings. */
 export function ContactBlock({ id, eyebrow, heading, lede, showShowroom }: ContactBlockData) {
   const headingId = `${id}-heading`;
-  const { showroomAddress, openingHours, email } = siteConfig.contact;
+  const { openingHours, email } = siteConfig.contact;
   const { startProject, bookShowroom } = siteConfig.ctas;
 
   return (
@@ -47,7 +47,7 @@ export function ContactBlock({ id, eyebrow, heading, lede, showShowroom }: Conta
               <div className="space-y-6 border-t border-line pt-8 sm:border-l sm:border-t-0 sm:pl-10 sm:pt-0">
                 <div>
                   <p className="eyebrow mb-2 text-taupe-deep">{uiText.footer.showroom}</p>
-                  <PendingLine {...showroomAddress} />
+                  <ShowroomAddress />
                 </div>
                 <div>
                   <p className="eyebrow mb-2 text-taupe-deep">{uiText.footer.openingHours}</p>

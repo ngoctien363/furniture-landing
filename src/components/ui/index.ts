@@ -7,5 +7,6 @@ export { ImageFrame, type ImageRatio } from "./image-frame";
 export { MockBadge } from "./mock-badge";
 export { Reveal } from "./reveal";
 export { Section, type SectionTone } from "./section";
+export { ShowroomAddress } from "./showroom-address";
 export { SectionHeading } from "./section-heading";
 export { PlaceholderNote } from "./placeholder-note";
