@@ -101,7 +101,7 @@ export const contactPage: ContactPageContent = {
   channels: {
     eyebrow: "Kênh liên hệ",
     heading: "Trò chuyện trực tiếp",
-    lede: "Hotline là kênh liên hệ nhanh nhất. Các kênh chính thức sẽ được công bố trong thời gian tới.",
+    lede: "Gọi hotline hoặc nhắn Zalo để được tư vấn nhanh nhất.",
   },
   showroom: {
     eyebrow: "Showroom",

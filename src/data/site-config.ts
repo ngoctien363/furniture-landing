@@ -5,10 +5,10 @@ import { images } from "./images";
  * Site-wide settings (future Payload `SiteSettings` + `Navigation` globals).
  *
  * ⚠️ DEMONSTRATION CONTENT
- * Every contact value below is intentionally `null`. The real hotline, Zalo,
- * Facebook, address and company facts have NOT been provided and must never
- * be invented. While a value is `null`, the UI shows its labelled placeholder
- * and renders no link or action for it.
+ * Hotline, Zalo, Facebook and Messenger are real values supplied by the business.
+ * Address, opening hours, email and company facts have NOT been
+ * provided and must never be invented. While a value is `null`, the UI shows
+ * its labelled placeholder and renders no link or action for it.
  */
 export const siteConfig: SiteConfig = {
   name: "Siêu Thị Nội Thất",
@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
   isDemoContent: true,
   demoNotice: {
     short: "Bản demo · Đang cập nhật nội dung",
-    full: "Website đang trong giai đoạn hoàn thiện. Giới thiệu doanh nghiệp, mô tả dịch vụ, thông tin chi tiết dự án và các kênh liên hệ chính thức sẽ được cập nhật sau.",
+    full: "Website đang trong giai đoạn hoàn thiện. Giới thiệu doanh nghiệp, mô tả dịch vụ, thông tin chi tiết dự án và địa chỉ showroom sẽ được cập nhật sau.",
   },
 
   navigation: [
@@ -60,25 +60,27 @@ export const siteConfig: SiteConfig = {
       hotline: {
         id: "hotline",
         label: "Hotline",
-        contact: { value: null, placeholder: "Hotline sắp cập nhật" },
+        contact: { value: "0376 650 932", placeholder: "Hotline sắp cập nhật" },
         actionLabel: "Gọi ngay",
       },
       zalo: {
         id: "zalo",
         label: "Zalo",
-        contact: { value: null, placeholder: "Zalo sắp cập nhật" },
+        contact: { value: "0376 650 932", placeholder: "Zalo sắp cập nhật" },
         actionLabel: "Nhắn Zalo",
       },
       facebook: {
         id: "facebook",
         label: "Facebook",
-        contact: { value: null, placeholder: "Facebook sắp cập nhật" },
+        contact: { value: "https://www.facebook.com/VANTRUNG932", placeholder: "Facebook sắp cập nhật" },
+        display: "facebook.com/VANTRUNG932",
         actionLabel: "Xem Facebook",
       },
       messenger: {
         id: "messenger",
         label: "Messenger",
-        contact: { value: null, placeholder: "Messenger sắp cập nhật" },
+        contact: { value: "https://m.me/VANTRUNG932", placeholder: "Messenger sắp cập nhật" },
+        display: "m.me/VANTRUNG932",
         actionLabel: "Nhắn Messenger",
       },
     },

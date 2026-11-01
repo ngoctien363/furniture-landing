@@ -31,7 +31,9 @@ export function getContactHref(channel: ContactChannel): string | null {
 
 /** Human-readable text for a channel: real value or its labelled placeholder. */
 export function getContactDisplay(channel: ContactChannel): string {
-  return channel.contact.value?.trim() || channel.contact.placeholder;
+  const value = channel.contact.value?.trim();
+  if (!value) return channel.contact.placeholder;
+  return channel.display ?? value;
 }
 
 /** Whether a channel opens in a new tab (external web destinations). */

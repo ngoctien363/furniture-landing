@@ -83,6 +83,8 @@ export interface ContactChannel {
    * - facebook / messenger: full https URL
    */
   contact: PendingValue;
+  /** Optional shorter text shown instead of the raw value (e.g. a URL). */
+  display?: string;
   /** Short call-to-action text, e.g. "Call now". */
   actionLabel: string;
 }
