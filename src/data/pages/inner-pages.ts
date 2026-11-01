@@ -106,7 +106,7 @@ export const contactPage: ContactPageContent = {
   showroom: {
     eyebrow: "Showroom",
     heading: "Đặt lịch tham quan showroom",
-    lede: "Trải nghiệm trực tiếp vật liệu và hoàn thiện. Giờ mở cửa sẽ được cập nhật.",
+    lede: "Trải nghiệm trực tiếp vật liệu và hoàn thiện tại showroom.",
     image: images.apt2DiningKitchen,
   },
   form: {
